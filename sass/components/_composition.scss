@@ -1,11 +1,42 @@
 .composition {
+  position: relative;
+
   &__photo {
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
-    border-radius: 20rem;
-  }
-}
+    border-radius: 0.2rem;
+    position: absolute;
+    // z-index is used to help place elements on top of each other, particularly when focused on them
+    z-index: 1;
+    transition: all 0.2s;
+    // this works in conjunction with outline to give the space inbetween the image and the
+    // outline; can't do this with just the border property
+    outline-offset: 2rem;
 
-.wireTest {
-  color: blue;
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      outline: 1rem solid $color-primary;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      // this number must be higher that its parent in order to be on top; the
+      // actual number doesn't really matter
+      z-index: 2;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
 }

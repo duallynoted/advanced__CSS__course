@@ -1,45 +1,34 @@
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem);
-  }
+    transform: translateX(-10rem); }
   /* 60% {
         transform: rotate(120deg)
     } */
   80% {
-    transform: translateX(5rem);
-  }
+    transform: translateX(5rem); }
   100% {
     opacity: 1;
     transform: translate(0);
-    /* rotate(360deg) */
-  }
-}
+    /* rotate(360deg) */ } }
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem);
-  }
+    transform: translateX(10rem); }
   80% {
-    transform: translateX(-5rem);
-  }
+    transform: translateX(-5rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(5rem);
-  }
+    transform: translateY(5rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 *,
 *::after,
@@ -49,21 +38,18 @@
   /* Using box-sizing: inherit to force inheritance and moved border-box to body because of inheritance. 
     There's not a big difference here, just a more accepted practice in css development. Makes it easier 
     to change box-sizing on plugins or components down the road */
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html {
   /* I set the browser px at 10px to be able to easily change the declarations to rem units. The problem with 
     this is that it doesn't allow the user to change css values for accessibility purposes. Therefore, we use
     a percentage here. The default is 16px, we want to use 10px, so 16/10 = .625 or 62.5% */
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 body {
   /* Using border-box will only take in the specified height and width of an element so you don't also have
     to calculate the border and the padding */
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -73,34 +59,30 @@ body {
   color: #777;
   padding: 3rem;
   /* Using border-box will only take in the specified height and width of an element so you don't also have
-    to calculate the border and the padding */
-}
+    to calculate the border and the padding */ }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   /* this is a fix for the shakiness of animations */
   backface-visibility: hidden;
-  margin: 0 0 6rem;
-}
-.heading-primary--main {
-  display: block;
-  font-weight: 400;
-  font-size: 6rem;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 2s;
-}
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 2s ease-out;
-  /* animation-timing-function: ease-in-out; */
-  /* animation-iteration-count: 2;
-    animation-delay: 2s; */
-}
+  margin: 0 0 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-weight: 400;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 2s ease-out;
+    /* animation-timing-function: ease-in-out; */
+    /* animation-iteration-count: 2;
+    animation-delay: 2s; */ }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -111,46 +93,36 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   transition: all 0.2s;
-  letter-spacing: 0.2rem;
-}
-.heading-secondary:hover {
-  transform: skewY(1deg) skewX(10deg) scale(1.1);
-  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+  letter-spacing: 0.2rem; }
+  .heading-secondary:hover {
+    transform: skewY(1deg) skewX(10deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .heading-tertiary {
   font-size: 1.6rem;
   font-weight: 700;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 .paragraph {
-  font-size: 1.6rem;
-}
-.paragraph:not(:last-child) {
-  margin-bottom: 3rem;
-}
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center;
-}
+  text-align: center; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem;
-}
+  margin-bottom: 1.5rem; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem;
-}
+  margin-bottom: 4rem; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem;
-}
+  margin-bottom: 8rem; }
 
 /* putting btn:link and btn:button together so that it avoids turning the 
 button a different color like links once you've visited them */
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -158,39 +130,30 @@ button a different color like links once you've visited them */
   display: inline-block;
   transition: all 0.2s;
   position: relative;
-  font-size: 1.6rem;
-}
-.btn:link:hover,
-.btn:visited:hover {
-  /* This is probably the best place for a reminder. The X axis runs left to right, with negative values
+  font-size: 1.6rem; }
+  .btn:link:hover, .btn:visited:hover {
+    /* This is probably the best place for a reminder. The X axis runs left to right, with negative values
         going to the left (-5px) and positive values going to the right (5px). The Y axis runs top to bottom 
         with negative values going to the top (-5px)and positive values toward the bottom (5px) */
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-.btn:link:hover::after,
-.btn:visited:hover::after {
-  /* transitions have to be put on the parent element, in this case it's .btn::after */
-  /* I don't really like this effect, I think it looks better clean, so I'm commenting it out 
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:link:hover::after, .btn:visited:hover::after {
+      /* transitions have to be put on the parent element, in this case it's .btn::after */
+      /* I don't really like this effect, I think it looks better clean, so I'm commenting it out 
             to save for later */
-  transform: scaleX(1.4) scaleY(1.5);
-  background-color: #7ed56f;
-  /* opacity is the trick for fading something out */
-  opacity: 0;
-}
-.btn:link:active,
-.btn:visited:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+      transform: scaleX(1.4) scaleY(1.5);
+      background-color: #7ed56f;
+      /* opacity is the trick for fading something out */
+      opacity: 0; }
+  .btn:link:active, .btn:visited:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
   color: gray;
-  background-color: #fff;
-}
-.btn--white::after {
-  background-color: #fff;
-}
+  background-color: #fff; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -202,8 +165,7 @@ button a different color like links once you've visited them */
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s;
-}
+  transition: all 0.4s; }
 
 .btn:hover::after {
   /* transitions have to be put on the parent element, in this case it's .btn::after */
@@ -212,103 +174,107 @@ button a different color like links once you've visited them */
   transform: scaleX(1.4) scaleY(1.5);
   background-color: #7ed56f;
   /* opacity is the trick for fading something out */
-  opacity: 0;
-}
+  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom 0.9s ease-out 1s;
   /* this will apply the 0% position and opacity to the button before the animation starts, thereby
     hiding it because of the opacity */
-  animation-fill-mode: backwards;
-}
+  animation-fill-mode: backwards; }
 
-.btn-text:link,
-.btn-text:visited {
+.btn-text:link, .btn-text:visited {
   color: #7ed56f;
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid #7ed56f;
   padding: 3px;
   font-size: 1.6rem;
-  transition: all 0.2s;
-}
+  transition: all 0.2s; }
 
 .btn-text:hover {
   background-color: #7ed56f;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-  transform: translateY(-0.2rem);
-}
+  transform: translateY(-0.2rem); }
 
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  transform: translateY(0);
-}
+  transform: translateY(0); }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 0.2rem;
+    position: absolute;
+    z-index: 1;
+    transition: all 0.2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1rem solid #7ed56f;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 2; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)),
-    url("../img/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative;
-}
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .row {
   max-width: 114rem;
-  margin: 0 auto;
-}
-.row:not(:last-child) {
-  margin-bottom: 8rem;
-}
-.row:after {
-  clear: both;
-  display: table;
-  content: "";
-}
-.row [class^="col-"] {
-  float: left;
-}
-.row [class^="col-"]:not(:last-child) {
-  margin-right: 9rem;
-}
-.row .col-1-of-2 {
-  width: calc((100% - 9rem) / 2);
-}
-.row .col-1-of-3 {
-  width: calc((100% - 2 * 9rem) / 3);
-}
-.row .col-2-of-3 {
-  width: calc(2 * ((100% - 2 * 9rem) / 3) + 9rem);
-}
-.row .col-1-of-4 {
-  width: calc((100% - 3 * 9rem) / 4);
-}
-.row .col-2-of-4 {
-  width: calc(2 * ((100% - 3 * 9rem) / 4) + 9rem);
-}
-.row .col-3-of-4 {
-  width: calc(3 * ((100% - 3 * 9rem) / 4) + 2 * 9rem);
-}
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row:after {
+    clear: both;
+    display: table;
+    content: ""; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 9rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 9rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 9rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 9rem) / 3) + 9rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 9rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 9rem) / 4) + 9rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 9rem) / 4) + 2 * 9rem); }
 
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem;
-  margin-top: -20vh;
-}
+  margin-top: -20vh; }
