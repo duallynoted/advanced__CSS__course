@@ -29,7 +29,7 @@
     &:hover {
       outline: 1rem solid $color-primary;
       transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.6);
       // this number must be higher that its parent in order to be on top; the
       // actual number doesn't really matter
       z-index: 2;
