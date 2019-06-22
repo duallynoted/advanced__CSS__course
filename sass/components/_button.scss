@@ -1,0 +1,98 @@
+/* putting btn:link and btn:button together so that it avoids turning the 
+button a different color like links once you've visited them */
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 4rem;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+
+    &:hover {
+      /* This is probably the best place for a reminder. The X axis runs left to right, with negative values
+        going to the left (-5px) and positive values going to the right (5px). The Y axis runs top to bottom 
+        with negative values going to the top (-5px)and positive values toward the bottom (5px) */
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      &::after {
+        /* transitions have to be put on the parent element, in this case it's .btn::after */
+        /* I don't really like this effect, I think it looks better clean, so I'm commenting it out 
+            to save for later */
+        // Update: I have now uncommented it
+        transform: scaleX(1.4) scaleY(1.5);
+        background-color: #7ed56f;
+        /* opacity is the trick for fading something out */
+        opacity: 0;
+      }
+    }
+    &:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
+  }
+
+  &--white {
+    color: gray;
+    background-color: $color-white;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  &:hover::after {
+    /* transitions have to be put on the parent element, in this case it's .btn::after */
+    /* I don't really like this effect, I think it looks better clean, so I'm commenting it out 
+    to save for later */
+    // Update: I have now uncommented it
+    transform: scaleX(1.4) scaleY(1.5);
+    background-color: #7ed56f;
+    /* opacity is the trick for fading something out */
+    opacity: 0;
+  }
+  &--animated {
+    animation: moveInBottom 0.9s ease-out 1s;
+    /* this will apply the 0% position and opacity to the button before the animation starts, thereby
+    hiding it because of the opacity */
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    font-size: $default-font-size;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-0.2rem);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0);
+  }
+}

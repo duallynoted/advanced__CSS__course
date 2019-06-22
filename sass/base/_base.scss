@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /* Using box-sizing: inherit to force inheritance and moved border-box to body because of inheritance. 
+    There's not a big difference here, just a more accepted practice in css development. Makes it easier 
+    to change box-sizing on plugins or components down the road */
+    box-sizing: inherit;
+}
+
+html {
+    /* I set the browser px at 10px to be able to easily change the declarations to rem units. The problem with 
+    this is that it doesn't allow the user to change css values for accessibility purposes. Therefore, we use
+    a percentage here. The default is 16px, we want to use 10px, so 16/10 = .625 or 62.5% */
+    font-size: 62.5%;
+}
+
+body {
+    /* Using border-box will only take in the specified height and width of an element so you don't also have
+    to calculate the border and the padding */
+    box-sizing: border-box;
+}
